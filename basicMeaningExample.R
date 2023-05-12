@@ -1,19 +1,28 @@
-#load table
-dataMeaning=read.table('meaningExample.txt', header=T, sep="\t")
+install.packages("tm")
+install.packages("wordcloud")
+install.packages("SnowballC")
 
-#plot with the labels
-plot(dataMeaning$length,dataMeaning$meanings,type="n",xlab="number of letters",ylab="number of meanings")
-text(dataMeaning$length,dataMeaning$meanings,dataMeaning$entry, cex= 1)
+library(tm)
+library(wordcloud)
+library(SnowballC)
 
-#Now we'd like to build a regression model, i.e., find the equation for the straight line that best defines the dataset. 
+myText = readLines('QStaxonomy.txt')
+myCorpus <- Corpus(VectorSource(myText))
 
-myModel = lm(dataMeaning$meanings~dataMeaning$length)
-summary(myModel)
-#least square fitting
-abline(myModel,col="red",lw="3")
+#Delete unnecessary white space
+myCorpus <- tm_map(myCorpus, stripWhitespace)
 
-#quick and dirty trick to avoid label overlap (best solution: export to
-# vector format, like eps, and edit in separate software)
-newMeanings = jitter(dataMeaning$meanings, 5)
-plot(dataMeaning$length,newMeanings,type="n",xlab="number of letters",ylab="number of meanings")
-text(dataMeaning$length,newMeanings,dataMeaning$entry, cex= 1)
+#get the frequency
+dataMatrix <- TermDocumentMatrix(myCorpus)
+myMatrix <- as.matrix(dataMatrix)
+mySortedMatrix <- sort(rowSums(myMatrix),decreasing=TRUE)
+wordDataFrame <- data.frame(word = names(mySortedMatrix),freq=mySortedMatrix)
+head(wordDataFrame)
+
+#wordcloud(wordDataFrame$word,wordDataFrame$freq,min.freq=7)
+wordcloud(wordDataFrame$word,wordDataFrame$freq,min.freq=7,
+          colors=brewer.pal(7,"Paired"))
+
+barplot(wordDataFrame[1:7,]$freq, las = 2, names.arg = wordDataFrame[1:7,]$word,
+        col = "purple", main ="Question Sequence Taxonomy",
+        ylab = "Frequency")
