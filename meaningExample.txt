@@ -1,21 +1,119 @@
-entry	length	meanings
-bag	3	8
-buckle	6	4
-on	2	10
-insane	6	1
-by	2	11
-monastery	9	1
-relief	6	4
-slope	5	3
-scoundrel	9	1
-loss	4	6
-holiday	7	2
-pretentious	11	1
-solid	5	9
-time	4	3
-gut	3	4
-tarantula	9	1
-generality	10	3
-arise	5	3
-blot	4	3
-infectious	10	2
+interaction
+interaction
+interaction
+interaction
+interaction
+interaction
+interaction
+interaction
+interaction
+interaction
+interaction
+interaction
+interaction
+QUD
+explanation
+explanation
+explanation
+QUD
+explanation
+interaction
+anecdote
+anecdote
+anecdote
+anecdote
+anecdote
+anecdote
+anecdote
+anecdote
+anecdote
+anecdote
+interaction
+anecdote
+salience
+other
+anecdote
+QUD
+QUD
+anecdote
+anecdote
+interaction
+anecdote
+QUD
+anecdote
+QUD
+QUD
+QUD
+QUD
+QUD
+salience
+interaction
+QUD
+interaction
+interaction
+interaction
+interaction
+interaction
+interaction
+interaction
+QUD
+interaction
+salience
+explanation
+explanation
+salience
+QUD
+salience
+salience
+QUD
+salience
+explanation
+QUD
+QUD
+QUD
+QUD
+QUD
+QUD
+interaction
+stance
+interaction
+interaction
+interaction
+interaction
+interaction
+interaction
+QUD
+explanation
+explanation
+QUD
+other
+other
+explanation
+explanation
+stance
+QUD
+salience
+interaction
+interaction
+QUD
+salience
+QUD
+salience
+stance
+interaction
+interaction
+QUD
+QUD
+interaction
+salience
+QUD
+salience
+QUD
+salience
+QUD
+explanation
+explanation
+QUD
+salience
+other
+other
